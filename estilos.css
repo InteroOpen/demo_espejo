@@ -1,0 +1,64 @@
+/* BOTONES INICIO */
+#brazo{
+    border-bottom-left-radius: 25px; 
+    border-bottom-right-radius: 25px; 
+    border-top-left-radius: 25px; 
+    border-top-right-radius: 25px;
+}
+#cardio{
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px; 
+    border-top-left-radius: 25px; 
+    border-top-right-radius: 25px;
+}
+#pierna{
+    border-bottom-left-radius: 25px; 
+    border-bottom-right-radius: 25px; 
+    border-top-left-radius: 25px; 
+    border-top-right-radius: 25px;
+}
+#abdomen{
+    border-bottom-left-radius: 25px; 
+    border-bottom-right-radius: 25px; 
+    border-top-left-radius: 25px; 
+    border-top-right-radius: 25px;
+}
+#espalda{
+    border-bottom-left-radius: 25px; 
+    border-bottom-right-radius: 25px; 
+    border-top-left-radius: 25px; 
+    border-top-right-radius: 25px;
+}
+#elastico{
+    border-bottom-left-radius: 25px; 
+    border-bottom-right-radius: 25px; 
+    border-top-left-radius: 25px; 
+    border-top-right-radius: 25px;
+}
+
+
+/* BRAZO REGRESAR */
+#atrasB{
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 10px;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 10px;
+}
+
+/* BOTONES PECTO E IMG */
+#atrasP{
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+#rut1{
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+}
+
+#rut2{
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;   
+}

@@ -1,9 +1,4 @@
 var x = 0;
-var y = 0;
-const focusableElements = document.querySelectorAll(
-'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
-);
-const rAF = window.mozRequestAnimationFrame || window.requestAnimationFrame; 
 window.addEventListener('gamepadconnected', event => {
     console.log('Gamepad conectado');
     console.log(event.gamepad);
@@ -49,64 +44,13 @@ function update () {
         ]
       }
       const flechas = gamepads [0] .axes [9] .toFixed (3); // Flechas para izquierda o derecha
-      // console.log(gamepads [0] .axes [9] .toFixed(3));
-      // if (gamepads [0] .buttons [0] .pressed) {
-      //   y = y + 4;
-      //   console.log ('movido', y);
-      // }
-      if (gamepads [0] .axes [9] .toFixed(3) == -0.429) {
+      if (gamepads [0] .buttons [0] .pressed) {
         x = x + 4;
         console.log ('movido', x);
-        document.getElementById("btn_1").focus();
       }
-      if (gamepads [0] .axes [9] .toFixed(3) == 0.714) {
-        x = x - 4;
-        console.log ('movido', x);
-      }
-      if (gamepads [0] .axes [9] .toFixed(3) == -1.000) {
-        y = y + 4;
-        console.log ('movido', y);
-      }
-      if (gamepads [0] .axes [9] .toFixed(3) == 0.143) {
-        y = y - 4;
-        console.log ('movido', y);
     }
-
-      }
-
-
+  
     window.requestAnimationFrame (update);
   }
 
   window.requestAnimationFrame (update)
-
-//   window.addEventListener('gamepadconnected', function() {
-//     updateLoop();
-//   }); 
-  
-//   function updateLoop() {
-//     // check button states
-//     rAF(updateLoop);
-//   }
-//   let current;
-
-// function updateLoop() {
-//   const gamepad = navigator.getGamepads()[0]
-//   const gamepadBumperL = gamepad.buttons[4]
-//   const gamepadBumperR = gamepad.buttons[5]
-  
-//   if (gamepadBumperL.pressed) { prevItem(current) }
-//   if (gamepadBumperR.pressed) { nextItem(current) }
-  
-//   setTimeout(() => rAF(updateLoop), 100)
-// }
-
-// function prevItem(index) {
-//   current = (index - 1) % focusableElements.length
-//   focusableElements[current].focus()
-// }
-
-// function nextItem(index) {
-//   current = (index + 1) % focusableElements.length
-//   focusableElements[current].focus()
-// }

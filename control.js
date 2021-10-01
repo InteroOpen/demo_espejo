@@ -5,10 +5,11 @@ var btn = ["brazo", "cardio", "pierna", "abdomen", "espalda", "elastico"];
 // const focusableElements = document.querySelectorAll(
 // 'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
 // );
-// const rAF = window.mozRequestAnimationFrame || window.requestAnimationFrame; 
+const rAF = window.mozRequestAnimationFrame || window.requestAnimationFrame; 
 window.addEventListener('gamepadconnected', event => {
     console.log('Gamepad conectado');
     console.log(event.gamepad);
+    update();
 })
 
 window.addEventListener('gamepaddisconnected', event => {
@@ -61,12 +62,12 @@ function update () {
       //   y = y + 4;
       //   console.log ('movido', y);
       // }
-      if (k=>0 && k <=5){
+    if (k >= 0 && k <= 5){
       if (gamepads [0] .axes [9] .toFixed(3) == -0.429) { //Derecha
         x = x + 4;
+        k = k + 1 ;
         console.log ('movido', x);
-        document.getElementById(btn[k]).focus();
-          k = k + 1 ;
+        document.getElementById(btn[k]).focus();  
       }
    
       if (gamepads [0] .axes [9] .toFixed(3) == 0.714) { //Izquierda
@@ -78,18 +79,22 @@ function update () {
       if (gamepads [0] .axes [9] .toFixed(3) == -1.000) { //Arriba
         y = y + 4;
         console.log ('movido', y);
+        k = k -3 ;
         document.getElementById(btn[k]).focus();
-        k = k + 1 ;
       }
       if (gamepads [0] .axes [9] .toFixed(3) == 0.143) { //Abajo
         y = y - 4;
         console.log ('movido', y);
-        document.getElementById(btn[k]).focus();
-        k = k - 1 ;
-    }
-  };
+        k = k + 3 ;
+        document.getElementById(btn[k]).focus();  
+      }
+    } 
+  else{
+    k = k;
+  }
    
   }
-  window.requestAnimationFrame(update);
+  setTimeout(() => rAF(update), 100)
+  // window.requestAnimationFrame(update);
 }
-  window.requestAnimationFrame(update)
+  // window.requestAnimationFrame(update)

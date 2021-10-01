@@ -2,10 +2,10 @@ var x = 0;
 var y = 0;
 var k = 0;
 var btn = ["brazo", "cardio", "pierna", "abdomen", "espalda", "elastico"];
-const focusableElements = document.querySelectorAll(
-'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
-);
-const rAF = window.mozRequestAnimationFrame || window.requestAnimationFrame; 
+// const focusableElements = document.querySelectorAll(
+// 'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+// );
+// const rAF = window.mozRequestAnimationFrame || window.requestAnimationFrame; 
 window.addEventListener('gamepadconnected', event => {
     console.log('Gamepad conectado');
     console.log(event.gamepad);
@@ -51,23 +51,24 @@ function update () {
         ]
       }
       const flechas = gamepads [0] .axes [9] .toFixed (3); // Flechas para izquierda o derecha
-      if (gamepads [0] .buttons [0] .pressed) {
-        x = x + 4;
-        console.log ('movido', x);
-      }
+      console.log(flechas);
+      // if (gamepads [0] .buttons [0] .pressed) {
+      //   x = x + 4;
+      //   console.log ('movido', x);
+      // }
       // console.log(gamepads [0] .axes [9] .toFixed(3));
       // if (gamepads [0] .buttons [0] .pressed) {
       //   y = y + 4;
       //   console.log ('movido', y);
       // }
-      while (k>=0 && k <=5){
+      if (k=>0 && k <=5){
       if (gamepads [0] .axes [9] .toFixed(3) == -0.429) { //Derecha
         x = x + 4;
         console.log ('movido', x);
         document.getElementById(btn[k]).focus();
           k = k + 1 ;
-        
       }
+   
       if (gamepads [0] .axes [9] .toFixed(3) == 0.714) { //Izquierda
         x = x - 4;
         k = k - 1 ;
@@ -86,8 +87,9 @@ function update () {
         document.getElementById(btn[k]).focus();
         k = k - 1 ;
     }
-    };
-    window.requestAnimationFrame (update);
+  };
+   
   }
-
-  window.requestAnimationFrame (update)
+  window.requestAnimationFrame(update);
+}
+  window.requestAnimationFrame(update)

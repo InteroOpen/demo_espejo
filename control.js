@@ -76,6 +76,9 @@ function update () {
       if (gamepads [0] .axes [9] .toFixed(3) == 0.714) { //Izquierda
         x = x - 4;
         k = k - 1 ;
+        if(k==-1){
+          k = 5;
+        }
         current = k % btn.length;
         console.log(current);
         console.log ('movido', x);
@@ -84,6 +87,15 @@ function update () {
       if (gamepads [0] .axes [9] .toFixed(3) == -1.000) { //Arriba
         y = y + 4;
         k = k - 3 ;
+        if(k==-2){
+          k = 4;
+        }
+        if(k==-3){
+          k = 3;
+        }
+        if(k==-1){
+          k = 5;
+        }
         current = k % btn.length;
         console.log(current);
         console.log ('movido', y);
@@ -101,7 +113,9 @@ function update () {
   // else{
   //   k = k;
   // }
-   
+   if(gamepads [0] .buttons [2] .pressed){
+    document.getElementById(btn[current]).click();
+   }
   }
   setTimeout(() => rAF(update), 100)
   // window.requestAnimationFrame(update);

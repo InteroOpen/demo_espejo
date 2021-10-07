@@ -54,16 +54,6 @@ function update () {
       }
       const flechas = gamepads [0] .axes [9] .toFixed (3); // Flechas para izquierda o derecha
       console.log(flechas);
-      // if (gamepads [0] .buttons [0] .pressed) {
-      //   x = x + 4;
-      //   console.log ('movido', x);
-      // }
-      // console.log(gamepads [0] .axes [9] .toFixed(3));
-      // if (gamepads [0] .buttons [0] .pressed) {
-      //   y = y + 4;
-      //   console.log ('movido', y);
-      // }
-    // if (k >= 0 && k <= 5){
       if (gamepads [0] .axes [9] .toFixed(3) == -0.429) { //Derecha
         x = x + 4;
         k = k + 1 ;
@@ -109,15 +99,10 @@ function update () {
         current = k % btn.length;
         document.getElementById(btn[current]).focus();  
       }
-  //   } 
-  // else{
-  //   k = k;
-  // }
    if(gamepads [0] .buttons [2] .pressed){
     document.getElementById(btn[current]).click();
    }
   }
   setTimeout(() => rAF(update), 100)
-  // window.requestAnimationFrame(update);
 }
-  // window.requestAnimationFrame(update)
+

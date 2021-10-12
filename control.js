@@ -28,12 +28,7 @@ function update () {
           gamepads [0] .axes [1] .toFixed (2),
           gamepads [0] .axes [2] .toFixed (2),
           gamepads [0] .axes [3] .toFixed (2),
-          gamepads [0] .axes [4] .toFixed (2),
-          gamepads [0] .axes [5] .toFixed (2),
-          gamepads [0] .axes [6] .toFixed (2),
-          gamepads [0] .axes [7] .toFixed (2),
-          gamepads [0] .axes [8] .toFixed (2),
-          gamepads [0] .axes [9] .toFixed (2),
+          
         ],
         botones: [
           {button_0: gamepads [0] .buttons [0] .pressed},
@@ -50,11 +45,14 @@ function update () {
           {button_11: gamepads [0] .buttons [11] .pressed},
           {button_12: gamepads [0] .buttons [12] .pressed},
           {button_13: gamepads [0] .buttons [13] .pressed},
+          {button_14: gamepads [0] .buttons [14] .pressed},
+          {button_15: gamepads [0] .buttons [15] .pressed},
+          {button_16: gamepads [0] .buttons [16] .pressed},
         ]
       }
-      const flechas = gamepads [0] .axes [9] .toFixed (3); // Flechas para izquierda o derecha
+      const flechas = gamepads [0] .axes [3] .toFixed (3); // Flechas para izquierda o derecha
       console.log(flechas);
-      if (gamepads [0] .axes [9] .toFixed(3) == -0.429) { //Derecha
+      if (gamepads [0] .axes [3] .toFixed(3) == -0.429) { //Derecha
         x = x + 4;
         k = k + 1 ;
         current = k % btn.length;
@@ -63,7 +61,7 @@ function update () {
         document.getElementById(btn[current]).focus();  
       }
    
-      if (gamepads [0] .axes [9] .toFixed(3) == 0.714) { //Izquierda
+      if (gamepads [0] .axes [3] .toFixed(3) == 0.714) { //Izquierda
         x = x - 4;
         k = k - 1 ;
         if(k==-1){
@@ -74,7 +72,7 @@ function update () {
         console.log ('movido', x);
         document.getElementById(btn[current]).focus();  
       }
-      if (gamepads [0] .axes [9] .toFixed(3) == -1.000) { //Arriba
+      if (gamepads [0] .axes [3] .toFixed(3) == -1.000) { //Arriba
         y = y + 4;
         k = k - 3 ;
         if(k==-2){
@@ -91,7 +89,7 @@ function update () {
         console.log ('movido', y);
         document.getElementById(btn[current]).focus(); 
       }
-      if (gamepads [0] .axes [9] .toFixed(3) == 0.143) { //Abajo
+      if (gamepads [0] .axes [3] .toFixed(3) == 0.143) { //Abajo
         y = y - 4;
         console.log ('movido', y);
         console.log(current);
@@ -102,7 +100,37 @@ function update () {
    if(gamepads [0] .buttons [2] .pressed){
     document.getElementById(btn[current]).click();
    }
+   if (k >= 0 && k <= 5){
+    if (gamepads [0] .buttons [15] .pressed) { //Derecha
+      x = x + 4;
+      k = k + 1 ;
+      console.log ('movido', x);
+      document.getElementById(btn[k]).focus();  
+    }
+ 
+    if (gamepads [0] .buttons [14] .pressed) { //Izquierda
+      x = x - 4;
+      k = k - 1 ;
+      console.log ('movido', x);
+      document.getElementById(btn[k]).focus(); 
+    }
+    if (gamepads [0] .buttons [12] .pressed) { //Arriba
+      y = y + 4;
+      console.log ('movido', y);
+      k = k - 3 ;
+      document.getElementById(btn[k]).focus();
+    }
+    if (gamepads [0] .buttons [13] .pressed) { //Abajo
+      y = y - 4;
+      console.log ('movido', y);
+      k = k + 3 ;
+      document.getElementById(btn[k]).focus();  
+    }
+  } 
+else{
+  k = k;
+}
   }
-  setTimeout(() => rAF(update), 100)
+  setTimeout(() => rAF(update), 00)
 }
 

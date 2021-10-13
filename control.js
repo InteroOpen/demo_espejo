@@ -3,9 +3,8 @@ var y = 0;
 var k = 0;
 let current = 0; 
 var btn = ["brazo", "cardio", "pierna", "abdomen", "espalda", "elastico"];
-// const focusableElements = document.querySelectorAll(
-// 'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
-// );
+focusableElements = document.querySelectorAll('button');
+console.log(focusableElements);
 const rAF = window.mozRequestAnimationFrame || window.requestAnimationFrame; 
 window.addEventListener('gamepadconnected', event => {
     console.log('Gamepad conectado');

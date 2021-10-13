@@ -16,14 +16,16 @@
         <h1>¿Sobre qué músculo te gustaría aprender hoy?</h1>
 
     </main> 
-    <div>
+    <div style="width: 100%;">
         <img style="object-fit: cover; object-position: center; width: 100vw; height: 80vh; margin-bottom: 20px;"
-        src="imagenes/brazo.jpg" usemap="#imgmap"/>
-        <map name="imgmap">
+        src="imagenes/brazo.jpg" usemap="#map"/>
+    </div>
+        <map id="map_ID" name="map">
             <area shape="rect" coords="500,100,700,200" href="pectoral.html">
             <area shape="rect" coords="300,50,400,200" href="index.html">
+            <area shape="rect" coords="700,300,400,200" href="index.html">
         </map>   
-    </div>
+
     <a href="index.html">
         <button id="atrasB" class="btn bg-white">Regresar</button>
     </a>

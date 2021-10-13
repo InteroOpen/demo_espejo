@@ -1,3 +1,4 @@
+// import ImageMap from "..node_modules/image-map";
 var x = 0;
 var y = 0;
 var k = 0;
@@ -108,3 +109,4 @@ function update () {
   }
   setTimeout(() => rAF(update), 100)
 }
+

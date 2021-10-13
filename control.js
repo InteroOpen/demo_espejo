@@ -102,6 +102,6 @@ function update () {
     document.getElementById(btn[current]).click();
    }
   }
-  setTimeout(() => rAF(update), 100)
+  setTimeout(() => rAF(update), 150)
 }
 

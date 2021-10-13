@@ -100,7 +100,8 @@ function update () {
    if(gamepads [0] .buttons [2] .pressed){
     document.getElementById(btn[current]).click();
    }
-   if (k >= 0 && k <= 5){
+   /* BOTONES ONE */
+  /* if (k >= 0 && k <= 5){
     if (gamepads [0] .buttons [15] .pressed) { //Derecha
       x = x + 4;
       k = k + 1 ;
@@ -129,8 +130,8 @@ function update () {
   } 
 else{
   k = k;
-}
+}  */
   }
-  setTimeout(() => rAF(update), 00)
+  setTimeout(() => rAF(update), 200)
 }
 

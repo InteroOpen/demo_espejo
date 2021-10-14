@@ -97,11 +97,11 @@ function update () {
         current = k % btn.length;
         document.getElementById(btn[current]).focus();  
       }
-   if(gamepads [0] .buttons [2] .pressed){
+   if(gamepads [0] .buttons [0] .pressed){
     document.getElementById(btn[current]).click();
    }
    /* BOTONES ONE */
-  /* if (k >= 0 && k <= 5){
+   if (k >= -5 && k <= 5){
     if (gamepads [0] .buttons [15] .pressed) { //Derecha
       x = x + 4;
       k = k + 1 ;
@@ -130,7 +130,7 @@ function update () {
   } 
 else{
   k = k;
-}  */
+}  
   }
   setTimeout(() => rAF(update), 200)
 }

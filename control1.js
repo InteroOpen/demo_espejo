@@ -73,24 +73,24 @@ function update () {
   //   // document.getElementById(btn[current]).click();
   //   focusableElements[current].click(); 
   //  }
-   if (gamepads [0] .buttons [2] .pressed) { //Derecha
+   if (gamepads [0] .buttons [3] .pressed) { //Derecha
     x = x + 4;
     k = k + 1 ;
-    current = k % btn.length;
+    current = k % focusableElements.length;
     console.log(current);
-    console.log ('movido', x);
+    console.log ('movidox', x);
     // document.getElementById(btn[current]).focus(); 
     focusableElements[current].focus(); 
   }
-  if (gamepads [0] .buttons [3] .pressed) { //Izquierda
+  if (gamepads [0] .buttons [2] .pressed) { //Izquierda
         x = x - 4;
         k = k - 1 ;
         if(k==-1){
           k = 5;
         }
-        current = k % btn.length;
+        current = k % focusableElements.length;
         console.log(current);
-        console.log ('movido', x);
+        console.log ('movidox', x);
         // document.getElementById(btn[current]).focus();
         focusableElements[current].focus();   
       }
@@ -106,18 +106,18 @@ function update () {
         if(k==-1){
           k = 3;
         }
-        current = k % btn.length;
+        current = k % focusableElements.length;
         console.log(current);
-        console.log ('movido', y);
+        console.log ('movidoy', y);
         // document.getElementById(btn[current]).focus(); 
         focusableElements[current].focus(); 
       }
       if (gamepads [0] .buttons [1] .pressed) { //Abajo
         y = y - 4;
-        console.log ('movido', y);
+        console.log ('movidoy', y);
         console.log(current);
         k = k + 3 ;
-        current = k % btn.length;
+        current = k % focusableElements.length;
         // document.getElementById(btn[current]).focus();  
         focusableElements[current].focus(); 
       }
@@ -127,9 +127,9 @@ function update () {
       //  }
 
   }
-  setTimeout(() => rAF(update), 150)
+  setTimeout(() => rAF(update), 180)
 }
-
+}
 // global variable for the player
 var player;
 

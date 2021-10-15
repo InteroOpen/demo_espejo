@@ -108,7 +108,7 @@ function update () {
   //   // document.getElementById(btn[current]).click();
   //   focusableElements[current].click(); 
   //  }
-  if (gamepads [0] .buttons [2] .pressed) { //Derecha
+  if (gamepads [0] .buttons [3] .pressed) { //Derecha
     x = x + 4;
     k = k + 1 ;
     current = k % btn.length;
@@ -117,7 +117,7 @@ function update () {
     // document.getElementById(btn[current]).focus(); 
     focusableElements[current].focus(); 
   }
-  if (gamepads [0] .buttons [3] .pressed) { //Izquierda
+  if (gamepads [0] .buttons [2] .pressed) { //Izquierda
         x = x - 4;
         k = k - 1 ;
         if(k==-1){

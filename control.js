@@ -78,3 +78,11 @@ function update () {
    setTimeout(() => rAF(update), 100)
   }
 
+      //Mapeo Tapete
+      // gamepads [0] .buttons [2] .pressed //Derecha
+      // gamepads [0] .buttons [3] .pressed //Izquierda
+      // gamepads [0] .buttons [0] .pressed //Arriba
+      // gamepads [0] .buttons [1] .pressed //Abajo
+      // gamepads [0] .buttons [8] .pressed //Back
+      // gamepads [0] .buttons [9] .pressed //Start
+      

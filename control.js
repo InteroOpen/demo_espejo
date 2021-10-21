@@ -19,10 +19,9 @@ window.addEventListener('gamepaddisconnected', event => {
 function update () {
     const gamepads = navigator.getGamepads ();
     if (gamepads [0]) {
-    //   const flechas = gamepads [0] .axes [9] .toFixed (3); // Flechas para izquierda o derecha
-    //   console.log(flechas);
-      if (gamepads [0] .axes [9] .toFixed(3) == -0.429) { //Derecha
-        x = x + 4;
+	
+  	console.log(gamepads[0].axes[4]);
+      if (gamepads [0] .axes [4] .toFixed(3) == 1.000) { //Derecha        x = x + 4;
         k = k + 1 ;
         current = k % focusableElements.length;
         console.log(current);
@@ -31,7 +30,7 @@ function update () {
         focusableElements[current].focus(); 
       }
    
-      if (gamepads [0] .axes [9] .toFixed(3) == 0.714) { //Izquierda
+      if (gamepads [0] .axes [4] .toFixed(3) == -1.000) { //Izquierda
         x = x - 4;
         k = k - 1 ;
         if(k==-1){
@@ -43,7 +42,7 @@ function update () {
         // document.getElementById(btn[current]).focus();
         focusableElements[current].focus();   
       }
-      if (gamepads [0] .axes [9] .toFixed(3) == -1.000) { //Arriba
+      if (gamepads [0] .axes [5] .toFixed(3) == 1.000) { //Arriba
         y = y + 4;
         k = k - 3 ;
         if(k==-2){
@@ -61,7 +60,7 @@ function update () {
         // document.getElementById(btn[current]).focus(); 
         focusableElements[current].focus(); 
       }
-      if (gamepads [0] .axes [9] .toFixed(3) == 0.143) { //Abajo
+      if (gamepads [0] .axes [5] .toFixed(3) == -1.000) { //Abajo
         y = y - 4;
         console.log ('movido', y);
         console.log(current);
@@ -85,4 +84,11 @@ function update () {
       // gamepads [0] .buttons [1] .pressed //Abajo
       // gamepads [0] .buttons [8] .pressed //Back
       // gamepads [0] .buttons [9] .pressed //Start
+      
+      //Mapeo control switch
+      //amepads [0] .axes [9] .toFixed(3) == -0.429 //Derecha
+      //gamepads [0] .axes [9] .toFixed(3) == 0.714  //Izquierda
+      //gamepads [0] .axes [9] .toFixed(3) == -1.000 //Arriba
+      //gamepads [0] .axes [9] .toFixed(3) == 0.143 //Abajo
+       
       

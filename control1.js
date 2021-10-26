@@ -20,12 +20,8 @@ function update () {
     const gamepads = navigator.getGamepads ();
     if (gamepads [0]) {
       if (gamepads [0] .axes [9] .toFixed(3) == -0.429) { //Derecha
-        x = x + 4;
         k = k + 1 ;
         current = k % focusableElements.length;
-        console.log(current);
-        console.log ('movido', x);
-        // document.getElementById(btn[current]).focus(); 
         focusableElements[current].focus(); 
       }
    
@@ -36,9 +32,6 @@ function update () {
           k = focusableElements.length;
         }
         current = k % focusableElements.length;
-        console.log(current);
-        console.log ('movido', x);
-        // document.getElementById(btn[current]).focus();
         focusableElements[current].focus();   
       }
       if (gamepads [0] .axes [9] .toFixed(3) == -1.000) { //Arriba
@@ -54,77 +47,17 @@ function update () {
           k = 5;
         }
         current = k % focusableElements.length;
-        console.log(current);
-        console.log ('movido', y);
-        // document.getElementById(btn[current]).focus(); 
         focusableElements[current].focus(); 
       }
       if (gamepads [0] .axes [9] .toFixed(3) == 0.143) { //Abajo
-        y = y - 4;
-        console.log ('movido', y);
-        console.log(current);
         k = k + 3 ;
         current = k % focusableElements.length;
-        // document.getElementById(btn[current]).focus();  
         focusableElements[current].focus(); 
       }
    if(gamepads [0] .buttons [2] .pressed){
     // document.getElementById(btn[current]).click();
     focusableElements[current].click(); 
    }
-  //  if (gamepads [0] .buttons [3] .pressed) { //Derecha
-  //   x = x + 4;
-  //   k = k + 1 ;
-  //   current = k % focusableElements.length;
-  //   console.log(current);
-  //   console.log ('movidox', x);
-  //   // document.getElementById(btn[current]).focus(); 
-  //   focusableElements[current].focus(); 
-  // }
-  // if (gamepads [0] .buttons [2] .pressed) { //Izquierda
-  //       x = x - 4;
-  //       k = k - 1 ;
-  //       if(k==-1){
-  //         k = 5;
-  //       }
-  //       current = k % focusableElements.length;
-  //       console.log(current);
-  //       console.log ('movidox', x);
-  //       // document.getElementById(btn[current]).focus();
-  //       focusableElements[current].focus();   
-  //     }
-  // if (gamepads [0] .buttons [0] .pressed) { //Arriba
-  //       y = y + 4;
-  //       k = k - 3 ;
-  //       if(k==-3){
-  //         k = 1;
-  //       }
-  //       if(k==-2){
-  //         k = 2;
-  //       }
-  //       if(k==-1){
-  //         k = 3;
-  //       }
-  //       current = k % focusableElements.length;
-  //       console.log(current);
-  //       console.log ('movidoy', y);
-  //       // document.getElementById(btn[current]).focus(); 
-  //       focusableElements[current].focus(); 
-  //     }
-  //     if (gamepads [0] .buttons [1] .pressed) { //Abajo
-  //       y = y - 4;
-  //       console.log ('movidoy', y);
-  //       console.log(current);
-  //       k = k + 3 ;
-  //       current = k % focusableElements.length;
-  //       // document.getElementById(btn[current]).focus();  
-  //       focusableElements[current].focus(); 
-  //     }
-  //     if(gamepads [0] .buttons [9] .pressed){
-  //       // document.getElementById(btn[current]).click();
-  //       focusableElements[current].click(); 
-  //     //  }
-
   // }
   setTimeout(() => rAF(update), 180)
 }
@@ -158,7 +91,7 @@ function onPlayerReady(event) {
 
 // Inject YouTube API script
 var tag = document.createElement("script");
-tag.src = "//www.youtube.com/player_api";
+tag.src = "http://www.youtube.com/player_api";
 var firstScriptTag = document.getElementsByTagName("script")[0];
 firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 

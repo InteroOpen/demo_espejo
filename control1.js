@@ -25,7 +25,7 @@ function update () {
         focusableElements[current].focus(); 
       }
    
-      if (gamepads [0] .axes [9] .toFixed(3) == 0.714) { //Izquierda
+      if (gamepads [0] .axes [4] .toFixed(3) == -1.000) { //Izquierda
         x = x - 4;
         k = k - 1 ;
         if(k==-1){
@@ -34,7 +34,7 @@ function update () {
         current = k % focusableElements.length;
         focusableElements[current].focus();   
       }
-      if (gamepads [0] .axes [9] .toFixed(3) == -1.000) { //Arriba
+      if (gamepads [0] .axes [5] .toFixed(3) == 1.000) { //Arriba
         y = y + 4;
         k = k - 3 ;
         if(k==-2){
@@ -58,7 +58,6 @@ function update () {
     // document.getElementById(btn[current]).click();
     focusableElements[current].click(); 
    }
-  // }
   setTimeout(() => rAF(update), 180)
 }
 }

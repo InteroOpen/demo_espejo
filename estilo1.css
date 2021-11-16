@@ -1,0 +1,8 @@
+#rectanguloFeliz{
+    fill: blueviolet;
+    stroke-width: 4;
+    stroke: white;
+}
+svg:hover{
+    background-color:blueviolet;
+}

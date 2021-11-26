@@ -1,0 +1,197 @@
+body{
+    text-align: center;
+    background-color: black;
+}
+
+.tapete{
+    width: 200px;
+    height: 200px;
+    background: white;
+    margin: 5px;
+    display: inline-block;
+    border: solid 5px red;
+    transition: 1s;
+    transition-timing-function: ease-out;
+}
+
+.tapete:hover{
+    transform: scale(1.11);
+    -webkit-box-shadow: 41px 48px 5px -8px rgba(0,0,0,0.75);
+-moz-box-shadow: 41px 48px 5px -8px rgba(0,0,0,0.75);
+box-shadow: 41px 48px 5px -8px rgba(0,0,0,0.75);
+    
+    background: rgb(18, 217, 33);
+}
+
+/*FLECHAS*/
+.flecha{
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin: 20px;
+    border-top: solid 10px;
+    border-right: solid 10px;
+}
+
+.flecha.derecha{
+    transform: rotate(45deg);
+    border-bottom-left-radius: 200px;
+    border-bottom-right-radius: 30px;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 30px;
+}
+.flecha.abajo{
+    transform: rotate(135deg);
+    border-bottom-left-radius: 200px;
+    border-bottom-right-radius: 30px;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 30px;
+}
+.flecha.izquierda{
+    transform: rotate(225deg);
+    border-bottom-left-radius: 200px;
+    border-bottom-right-radius: 30px;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 30px;
+}
+.flecha.arriba{
+    transform: rotate(315deg);
+    border-bottom-left-radius: 200px;
+    border-bottom-right-radius: 30px;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 30px;
+}
+
+.flecha.a{
+    transform: rotate(90deg);
+    border-bottom-left-radius: 200px;
+    border-bottom-right-radius: 30px;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 30px;
+}
+.flecha.b{
+    transform: rotate(180deg);
+    border-bottom-left-radius: 200px;
+    border-bottom-right-radius: 30px;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 30px;
+}
+.flecha.c{
+    transform: rotate(270deg);
+    border-bottom-left-radius: 200px;
+    border-bottom-right-radius: 30px;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 30px;
+}
+.flecha.d{
+    transform: rotate(360deg);
+    border-bottom-left-radius: 200px;
+    border-bottom-right-radius: 30px;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 30px;
+}
+.flecha.e{
+    transform: rotate(135deg);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    background-color: black
+}
+
+#uno{
+    width: 50px;
+    height: 50px;
+    margin: 73px auto;
+}
+#dos{
+    width: 50px;
+    height: 50px;
+    margin: 73px auto;
+}
+#tres{
+    width: 50px;
+    height: 50px;
+    margin: 73px auto;
+}
+#cuatro{
+    width: 50px;
+    height: 50px;
+    margin: 70px auto;
+}
+#cinco{
+    width: 50px;
+    height: 50px;
+    margin: 70px auto;
+}
+#seis{
+    width: 50px;
+    height: 50px;
+    margin: 70px auto;
+}
+#siete{
+    width: 50px;
+    height: 50px;
+    margin: 60px auto;
+}
+#ocho{
+    width: 50px;
+    height: 50px;
+    margin: 60px auto;
+}
+#nueve{
+    width: 50px;
+    height: 50px;
+    margin: 60px auto;
+}
+
+@keyframes cuadrado{
+    0% {background: white}
+    100%{background: rgb(18, 217, 33)}
+    from{
+        transform: scale(1);
+    }
+    to{
+        transform: scale(1.15);
+    }
+}
+.jojo {
+    animation-name: cuadrado;
+    animation-iteration-count: infinite;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-direction: alternate;
+}
+/*ANIMACIONES*/
+#c1{
+    animation-name: cuadrado;
+    animation-iteration-count: infinite;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-direction: alternate;
+}
+
+/*#c4{
+    animation-name: cuadrado;
+    animation-iteration-count: infinite;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-direction: alternate;
+}*/
+
+/*#c5{
+    animation-name: cuadrado;
+    animation-iteration-count:infinite;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-direction: alternate;
+    animation-delay: 5s;
+}*/
+
+/*#c6{
+    animation-name: cuadrado;
+    animation-iteration-count: infinite;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-direction: alternate;
+}*/

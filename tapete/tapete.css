@@ -20,7 +20,7 @@ body{
 -moz-box-shadow: 41px 48px 5px -8px rgba(0,0,0,0.75);
 box-shadow: 41px 48px 5px -8px rgba(0,0,0,0.75);
     
-    background: rgb(18, 217, 33);
+    background: rgb(177, 32, 21);
 }
 
 /*FLECHAS*/
@@ -104,48 +104,8 @@ box-shadow: 41px 48px 5px -8px rgba(0,0,0,0.75);
     height: 50px;
     margin: 73px auto;
 }
-#dos{
-    width: 50px;
-    height: 50px;
-    margin: 73px auto;
-}
-#tres{
-    width: 50px;
-    height: 50px;
-    margin: 73px auto;
-}
-#cuatro{
-    width: 50px;
-    height: 50px;
-    margin: 70px auto;
-}
-#cinco{
-    width: 50px;
-    height: 50px;
-    margin: 70px auto;
-}
-#seis{
-    width: 50px;
-    height: 50px;
-    margin: 70px auto;
-}
-#siete{
-    width: 50px;
-    height: 50px;
-    margin: 60px auto;
-}
-#ocho{
-    width: 50px;
-    height: 50px;
-    margin: 60px auto;
-}
-#nueve{
-    width: 50px;
-    height: 50px;
-    margin: 60px auto;
-}
 
-@keyframes cuadrado{
+@keyframes animacion_correcto{
     0% {background: white}
     100%{background: rgb(18, 217, 33)}
     from{
@@ -155,18 +115,50 @@ box-shadow: 41px 48px 5px -8px rgba(0,0,0,0.75);
         transform: scale(1.15);
     }
 }
-.jojo {
-    animation-name: cuadrado;
+
+@keyframes animacion_incorrecto{
+    0% {background: white}
+    100%{background: rgb(177, 32, 21)}
+    from{
+        transform: scale(1);
+    }
+    to{
+        transform: scale(1.15);
+    }
+}
+
+@keyframes animacion_activo{
+    0% {background: white}
+    100%{background: rgb(21, 146, 177)}
+    from{
+        transform: scale(1);
+    }
+    to{
+        transform: scale(1.15);
+    }
+}
+/*ANIMACIONES*/
+
+.boton_activo {
+    animation-name: animacion_activo;
     animation-iteration-count: infinite;
-    animation-duration: 2s;
+    animation-duration: 1s;
     animation-timing-function: linear;
     animation-direction: alternate;
 }
-/*ANIMACIONES*/
-#c1{
-    animation-name: cuadrado;
+
+.boton_correcto {
+    animation-name: animacion_correcto;
     animation-iteration-count: infinite;
-    animation-duration: 2s;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-direction: alternate;
+}
+
+.boton_incorrecto {
+    animation-name: animacion_incorrecto;
+    animation-iteration-count: infinite;
+    animation-duration: 1s;
     animation-timing-function: linear;
     animation-direction: alternate;
 }

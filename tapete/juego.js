@@ -21,20 +21,37 @@ acciones = [
 	// }, 
 	{
 		duracion: 2,
-		id_flechas: [Direction.flecha_centro_derecha, Direction.flecha_centro_izquierda]
-	},
-	{
-	 	duracion: 2,
-	 	id_flechas: [Direction.flecha_central]
-	},
-	{
-		duracion: 2,
 		id_flechas: [Direction.flecha_abajo]
    	},
 	{
 		duracion: 2,
-		id_flechas: [Direction.flecha_arriba]
+		id_flechas: [Direction.flecha_arriba, Direction.flecha_abajo]
    	},
+	{
+		duracion: 2,
+		id_flechas: [Direction.flecha_centro_derecha, Direction.flecha_centro_izquierda]
+	},
+
+	// {
+	// 	duracion: 2,
+	// 	id_flechas: [Direction.flecha_arriba, Direction.flecha_abajo]
+   	// },
+	// {
+	// 	duracion: 2,
+	// 	id_flechas: [Direction.flecha_centro_derecha, Direction.flecha_centro_izquierda]
+	// },
+	// {
+	//  	duracion: 2,
+	//  	id_flechas: [Direction.flecha_central]
+	// },
+	// {
+	// 	duracion: 2,
+	// 	id_flechas: [Direction.flecha_abajo]
+   	// },
+	// {
+	// 	duracion: 2,
+	// 	id_flechas: [Direction.flecha_arriba]
+   	// },
 ]
 
 // console.log("Esto es una prueba");
@@ -45,6 +62,7 @@ for (let i = 0; i < acciones.length; i++) {
 	console.log(accion.id_flechas)
 	if (accion.id_flechas) {
 		setTimeout(function() {
+
 				console.log("corre", accion)
 				accion.id_flechas.forEach(id_flecha => {
 					switch(id_flecha) {
@@ -58,10 +76,16 @@ for (let i = 0; i < acciones.length; i++) {
 						break
 						case Direction.flecha_central:
 							flecha_central.classList.toggle('boton_activo')
+							setTimeout(function() {
+								flecha_central.classList.remove('boton_activo')
+							}, (accion.duracion * 1000) -100);
 							flecha_central.style['animation-iteration-count'] = accion.duracion*2;
 						break
 						case Direction.flecha_abajo:
-							flecha_abajo.classList.toggle('boton_activo')
+							flecha_abajo.classList.add('boton_activo')
+							setTimeout(function() {
+								flecha_abajo.classList.remove('boton_activo')
+							}, (accion.duracion * 1000) -100);
 							flecha_abajo.style['animation-iteration-count'] = accion.duracion*2;
 						break
 						case Direction.flecha_arriba:

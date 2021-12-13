@@ -8,21 +8,24 @@
         integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" />
     <link rel="stylesheet" href="estilos.css"/>
-    <title>Espalda</title>
+    <title>Brazos</title>
 </head>
 
 <body style="background-color: black;">
-    <main class="container text-center text-light">
+    <main class="container text-light text-center">
         <h1>¿Sobre qué músculo te gustaría aprender hoy?</h1>
 
     </main> 
-    <div>
-        <img style="object-fit: cover; object-position: center; width: 100%; margin-bottom: 20px;"
-        src="imagenes/espalda.jpg" usemap="#imgmap"/>
-        <map name="imgmap">
-            <area shape="rect" coords="200,50,600,100" href="trapecio.html">
-        </map>   
+    <div style="width: 100%;">
+        <img style="object-fit: cover; object-position: center; width: 100vw; height: 80vh; margin-bottom: 20px;"
+        src="imagenes/brazo.jpg" usemap="#map"/>
     </div>
+        <map id="map_ID" name="map">
+            <area shape="rect" coords="700,100,800,200" href="pectoral.html" title="Pectoral" alt="Pectoral">
+            <area shape="rect" coords="490,280,570,360" href="index.html" title="Bicep" alt="Bicep">
+            <area shape="rect" coords="410,290,470,370" href="index.html" title="Tricep" alt="Tricep">
+        </map>   
+
     <a href="index.html">
         <button id="atrasB" class="btn bg-white">Regresar</button>
     </a>

@@ -19,31 +19,30 @@ acciones = [
 	// 	duracion: 5,
 	// 	id_flechas: null,
 	// }, 
-	{
-		duracion: 2,
-		id_flechas: [Direction.flecha_abajo]
-   	},
-	{
-		duracion: 2,
-		id_flechas: [Direction.flecha_arriba, Direction.flecha_abajo]
-   	},
-	{
-		duracion: 2,
-		id_flechas: [Direction.flecha_centro_derecha, Direction.flecha_centro_izquierda]
-	},
-
+	// {
+	// 	duracion: 5,
+	// 	id_flechas: [Direction.flecha_abajo]
+   	// },
 	// {
 	// 	duracion: 2,
 	// 	id_flechas: [Direction.flecha_arriba, Direction.flecha_abajo]
    	// },
-	// {
-	// 	duracion: 2,
-	// 	id_flechas: [Direction.flecha_centro_derecha, Direction.flecha_centro_izquierda]
-	// },
-	// {
-	//  	duracion: 2,
-	//  	id_flechas: [Direction.flecha_central]
-	// },
+	{
+		duracion: 5,
+		id_flechas: [Direction.flecha_centro_derecha, Direction.flecha_centro_izquierda]
+	},
+	{
+		duracion: 5,
+		id_flechas: [Direction.flecha_central]
+   	},
+	{
+		duracion: 5,
+		id_flechas: [Direction.flecha_centro_derecha, Direction.flecha_centro_izquierda]
+	},
+	{
+	 	duracion: 5,
+	 	id_flechas: [Direction.flecha_central]
+	},
 	// {
 	// 	duracion: 2,
 	// 	id_flechas: [Direction.flecha_abajo]
@@ -68,10 +67,16 @@ for (let i = 0; i < acciones.length; i++) {
 					switch(id_flecha) {
 						case Direction.flecha_centro_derecha:
 							flecha_centro_derecha.classList.toggle('boton_activo')
+							setTimeout(function() {
+								flecha_central.classList.remove('boton_activo')
+							}, (accion.duracion * 1000) -100);
 							flecha_centro_derecha.style['animation-iteration-count'] = accion.duracion*2;
 						break
 						case Direction.flecha_centro_izquierda:
 							flecha_centro_izquierda.classList.toggle('boton_activo')
+							setTimeout(function() {
+								flecha_central.classList.remove('boton_activo')
+							}, (accion.duracion * 1000) -100);
 							flecha_centro_izquierda.style['animation-iteration-count'] = accion.duracion*2;
 						break
 						case Direction.flecha_central:
@@ -99,5 +104,34 @@ for (let i = 0; i < acciones.length; i++) {
 		}, wait_time)
 		wait_time = wait_time + accion.duracion * 1000;
 		console.log("afuera", wait_time)
+	}
+	if (accion.id_flechas){
+		setTimeout(function() {
+
+			console.log("corre", accion)
+			accion.id_flechas.forEach(id_flecha => {
+				switch(id_flecha) {
+					case Direction.flecha_centro_derecha:
+							flecha_centro_derecha.classList.remove('boton_activo');
+					break
+					case Direction.flecha_centro_izquierda:
+							flecha_centro_izquierda.classList.remove('boton_activo');
+					break
+					case Direction.flecha_central:
+							flecha_central.classList.remove('boton_activo');
+					break
+					case Direction.flecha_abajo:
+						flecha_bajo.classList.remove('boton_activo')
+					break
+					case Direction.flecha_arriba:
+						flecha_arriba.classList.remove('boton_activo')
+					break
+				}
+			})
+		
+		console.log("adentro", wait_time)
+	}, wait_time)
+	wait_time = wait_time + accion.duracion * 1000;
+	console.log("afuera", wait_time)
 	}
 }

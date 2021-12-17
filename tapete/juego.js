@@ -13,44 +13,41 @@ Object.freeze(Direction)
 // div_flecha_central = document.getElementById("flecha_central");
 // div_flecha_abajo = document.getElementById("flecha_abajo");
 // div_flecha_arriba = document.getElementById("flecha_arriba");
-console.log(flecha_centro_derecha)
 acciones = [
-	// {
-	// 	duracion: 5,
-	// 	id_flechas: null,
-	// }, 
-	// {
-	// 	duracion: 5,
-	// 	id_flechas: [Direction.flecha_abajo]
-   	// },
-	// {
-	// 	duracion: 2,
-	// 	id_flechas: [Direction.flecha_arriba, Direction.flecha_abajo]
-   	// },
 	{
-		duracion: 5,
-		id_flechas: [Direction.flecha_centro_derecha, Direction.flecha_centro_izquierda]
+		duracion: 1,
+		id_flechas: [Direction.flecha_centro_derecha, Direction.flecha_centro_izquierda],
+		wait_time: 1000
 	},
 	{
-		duracion: 5,
+		duracion: 1,
 		id_flechas: [Direction.flecha_central]
    	},
 	{
-		duracion: 5,
+		duracion: 1,
 		id_flechas: [Direction.flecha_centro_derecha, Direction.flecha_centro_izquierda]
 	},
 	{
-	 	duracion: 5,
+	 	duracion: 1,
 	 	id_flechas: [Direction.flecha_central]
 	},
-	// {
-	// 	duracion: 2,
-	// 	id_flechas: [Direction.flecha_abajo]
-   	// },
-	// {
-	// 	duracion: 2,
-	// 	id_flechas: [Direction.flecha_arriba]
-   	// },
+	{
+		duracion: 1,
+		id_flechas: [Direction.flecha_centro_derecha, Direction.flecha_centro_izquierda],
+		wait_time: 1000
+	},
+	{
+		duracion: 1,
+		id_flechas: [Direction.flecha_central]
+   	},
+	{
+		duracion: 1,
+		id_flechas: [Direction.flecha_centro_derecha, Direction.flecha_centro_izquierda]
+	},
+	{
+	 	duracion: 1,
+	 	id_flechas: [Direction.flecha_central]
+	}
 ]
 
 // console.log("Esto es una prueba");
@@ -58,7 +55,7 @@ acciones = [
 let wait_time = 0;
 for (let i = 0; i < acciones.length; i++) {
 	const accion = acciones[i];
-	console.log(accion.id_flechas)
+	// console.log(accion.id_flechas)
 	if (accion.id_flechas) {
 		setTimeout(function() {
 
@@ -128,10 +125,5 @@ for (let i = 0; i < acciones.length; i++) {
 					break
 				}
 			})
-		
-		console.log("adentro", wait_time)
-	}, wait_time)
-	wait_time = wait_time + accion.duracion * 1000;
-	console.log("afuera", wait_time)
-	}
+	}, wait_time)}
 }

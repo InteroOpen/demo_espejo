@@ -79,6 +79,7 @@ for (let i = 0; i < acciones.length; i++) {
 								if(gamepads1 [0] .axes [9] .toFixed(3) !== 0.714){
 									flecha_centro_derecha.classList.toggle('boton_incorrecto')	
 								};}
+								
 							// update();				
 						break
 						case Direction.flecha_centro_izquierda:

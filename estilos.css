@@ -1,39 +1,22 @@
 /* BOTONES INICIO */
-#brazo{
+#Principiante{
     border-bottom-left-radius: 25px; 
     border-bottom-right-radius: 25px; 
     border-top-left-radius: 25px; 
     border-top-right-radius: 25px;
 }
-#cardio{
+#Intermedio{
     border-bottom-left-radius: 25px;
     border-bottom-right-radius: 25px; 
     border-top-left-radius: 25px; 
     border-top-right-radius: 25px;
 }
-#pierna{
+#Avanzado{
     border-bottom-left-radius: 25px; 
     border-bottom-right-radius: 25px; 
     border-top-left-radius: 25px; 
     border-top-right-radius: 25px;
-}
-#abdomen{
-    border-bottom-left-radius: 25px; 
-    border-bottom-right-radius: 25px; 
-    border-top-left-radius: 25px; 
-    border-top-right-radius: 25px;
-}
-#espalda{
-    border-bottom-left-radius: 25px; 
-    border-bottom-right-radius: 25px; 
-    border-top-left-radius: 25px; 
-    border-top-right-radius: 25px;
-}
-#elastico{
-    border-bottom-left-radius: 25px; 
-    border-bottom-right-radius: 25px; 
-    border-top-left-radius: 25px; 
-    border-top-right-radius: 25px;
+
 }
 
 

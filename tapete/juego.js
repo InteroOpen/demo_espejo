@@ -52,35 +52,34 @@ acciones = [
 
 // console.log("Esto es una prueba");
 function update () {
+	console.log("wwiiiiiiiiiii");
 	const gamepads = navigator.getGamepads ();
 	if(gamepads[0]){
 		// console.log(gamepads [0] .buttons [2] .pressed);
-		if(gamepads [0] .axes [9] .toFixed(3) !== 0.714){
-			flecha_centro_derecha.classList.toggle('boton_incorrecto')	
+		if(gamepads [0] .axes [9] .toFixed(3) == 0.714){
+			flecha_arriba.classList.toggle('boton_incorrecto')
+			setTimeout(() => rAF(update), 1000)
+			setTimeout(() => {flecha_arriba.classList.remove('boton_incorrecto')}, 1000)
+			return;
 		}
 	}
-//    setTimeout(() => rAF(update), 1000)
+// //    setTimeout(() => rAF(update), 1000)
+setTimeout(() => rAF(update), 100)
   }
+  update();
 let wait_time = 0;
 for (let i = 0; i < acciones.length; i++) {
 	const accion = acciones[i];
 	// console.log(accion.id_flechas)
 	if (accion.id_flechas) {
-		setTimeout(function() {
-			const gamepads1 = navigator.getGamepads();
-			console.log(gamepads1);	
+
+		setTimeout(function() {	
 				console.log("corre", accion)
 				accion.id_flechas.forEach(id_flecha => {
 					switch(id_flecha) {
 						case Direction.flecha_centro_derecha:
 							flecha_centro_derecha.classList.toggle('boton_activo');
-							flecha_centro_derecha.style['animation-iteration-count'] = accion.duracion*2;
-							if(gamepads1[0]){
-								if(gamepads1 [0] .axes [9] .toFixed(3) !== 0.714){
-									flecha_centro_derecha.classList.toggle('boton_incorrecto')	
-								};}
-								
-							// update();				
+							flecha_centro_derecha.style['animation-iteration-count'] = accion.duracion*2;			
 						break
 						case Direction.flecha_centro_izquierda:
 							flecha_centro_izquierda.classList.toggle('boton_activo')

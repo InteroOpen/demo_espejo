@@ -157,8 +157,8 @@ box-shadow: 41px 48px 5px -8px rgba(0,0,0,0.75);
 
 .boton_incorrecto {
     animation-name: animacion_incorrecto;
-    animation-iteration-count: 5;
-    animation-duration: 1s;
+    animation-iteration-count: 6s;
+    animation-duration: 0.5s;
     animation-timing-function: linear;
     animation-direction: alternate;
 }
